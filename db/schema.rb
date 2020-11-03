@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_074046) do
+ActiveRecord::Schema.define(version: 2020_11_03_142044) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,12 @@ ActiveRecord::Schema.define(version: 2020_11_03_074046) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "microposts", force: :cascade do |t|
