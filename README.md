@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+開発メモ
+問題点
+・本番環境でHerokuが動作しない

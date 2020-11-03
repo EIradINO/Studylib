@@ -5,6 +5,9 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    unless signed_in?
+      redirect_to new_user_session_path
+    end
   end
 
   # GET /articles/1
@@ -19,13 +22,16 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    unless current_user.id == @article.user_id
+      redirect_to root_path
+      flash[:notice] = "アクセスできません"
+    end
   end
 
   # POST /articles
   # POST /articles.json
   def create
     @article = Article.new(article_params)
-
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
@@ -69,6 +75,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :contents)
+      params.require(:article).permit(:title, :content).merge(user_id: current_user.id)
     end
 end
