@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rooms/show'
   resources :tips
   resources :articles
   devise_for :users, controllers: {
