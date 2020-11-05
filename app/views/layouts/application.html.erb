@@ -13,7 +13,11 @@
     <header>
       <nav>
           <% if user_signed_in? %>
-          <strong><%= link_to current_user.username, pages_show_path %></strong>
+            <% if current_user.username.nil? %>
+              <strong><%= link_to "ユーザー名を設定してください", edit_user_registration_path %></strong>
+            <% else %>
+              <strong><%= link_to current_user.username, pages_show_path %></strong>
+            <% end %>
             <%= link_to '記事一覧', articles_path %>
             <%= link_to 'Tips一覧', tips_path %>
             <%= link_to '質問一覧', rooms_index_path %>

@@ -12,6 +12,9 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @rooms = Article.find(params[:id]).rooms
+    @room = Room.new
+    @article = Article.find(params[:id])
+    $article_id = Article.find(params[:id]).id
   end
 
   # GET /articles/new
@@ -31,6 +34,9 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
+
+    @article.user_id = current_user.id
+
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }

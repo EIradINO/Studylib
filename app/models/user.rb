@@ -4,8 +4,6 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      # deviseのuserカラムに name を追加している場合は以下のコメントアウトも追記します
-      # user.name = auth.info.name
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
     end
@@ -14,5 +12,4 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :tips, dependent: :destroy
   has_many :messages, dependent: :destroy
-  has_many :likes, dependent: :destroy
 end

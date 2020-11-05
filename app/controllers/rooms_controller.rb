@@ -8,7 +8,18 @@ class RoomsController < ApplicationController
     @messages = @room.messages
   end
 
-  def new
-
+  def create
+    @room = Room.new(room_params)
+    if @room.save
+      redirect_to @room
+    else
+      redirect_to root_path
+    end
   end
+
+  private
+
+    def room_params
+      params.require(:room).permit(:title).merge(article_id: $article_id)
+    end
 end

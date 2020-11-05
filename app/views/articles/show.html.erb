@@ -8,14 +8,23 @@
   <%= @article.content %>
 </p>
 
+質問一覧
+
 <div>
   <ul>
     <% @rooms.each do |room| %>
-      <li><%= link_to "ROOM#{room.id}", room_path(room) %></li>
+      <li><%= link_to room.title, room_path(room) %></li>
     <% end %>
   </ul>
 </div>
 
-<%= link_to 'new question', rooms_new_path %>
+<%= form_with model: @room do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit %>
+<% end %>
+
+<%#= render "rooms/new" %>
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
