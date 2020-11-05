@@ -13,4 +13,6 @@ class User < ApplicationRecord
 
   has_many :articles, dependent: :destroy
   has_many :tips, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :likes, dependent: :destroy
 end

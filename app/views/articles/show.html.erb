@@ -8,5 +8,14 @@
   <%= @article.content %>
 </p>
 
+<div>
+  <ul>
+    <% @rooms.each do |room| %>
+      <li><%= link_to "ROOM#{room.id}", room_path(room) %></li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to 'new question', rooms_new_path %>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

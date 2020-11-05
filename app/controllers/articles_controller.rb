@@ -5,14 +5,13 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
-    unless signed_in?
-      redirect_to new_user_session_path
-    end
+    redirect_root()
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @rooms = Article.find(params[:id]).rooms
   end
 
   # GET /articles/new
@@ -76,5 +75,9 @@ class ArticlesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def article_params
       params.require(:article).permit(:title, :content).merge(user_id: current_user.id)
+    end
+
+    def redirect_root
+      redirect_to root_path unless user_signed_in?
     end
 end
