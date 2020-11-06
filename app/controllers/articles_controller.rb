@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
     @rooms = Article.find(params[:id]).rooms
     @room = Room.new
     @article = Article.find(params[:id])
+    @user = User.find_by(id: @article.user_id)
     $article_id = Article.find(params[:id]).id
   end
 
