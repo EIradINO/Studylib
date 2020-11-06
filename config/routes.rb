@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :notes
   get 'rooms/show'
   resources :tips
   resources :articles

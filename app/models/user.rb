@@ -12,6 +12,7 @@ class User < ApplicationRecord
     likes.where(article_id: article_id).exists?
   end
 
+  has_many :notes, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :articles, dependent: :destroy
   has_many :tips, dependent: :destroy
