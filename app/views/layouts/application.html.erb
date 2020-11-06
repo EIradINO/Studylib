@@ -13,7 +13,7 @@
     <header>
       <nav>
           <% if user_signed_in? %>
-            <% if current_user.username.nil? %>
+            <% if current_user.username.nil? || (current_user.username == "") %>
               <strong><%= link_to "ユーザー名を設定してください", edit_user_registration_path %></strong>
             <% else %>
               <strong><%= link_to current_user.username, pages_show_path %></strong>

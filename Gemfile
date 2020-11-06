@@ -58,3 +58,6 @@ gem 'omniauth-google-oauth2'
 
 # 環境変数
 gem 'dotenv-rails'
+
+# font
+gem 'font-awesome-sass'

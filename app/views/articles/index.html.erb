@@ -11,14 +11,8 @@
 
   <tbody>
     <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.content %></td>
-        <td><%= link_to 'Show', article %></td>
-        <% if user_signed_in? && current_user.id == article.user_id %>
-          <td><%= link_to 'Edit', edit_article_path(article) %></td>
-          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+      <tr id="article_<%= article.id %>">
+        <%= render 'article', article: article %>
       </tr>
     <% end %>
   </tbody>
