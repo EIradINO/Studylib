@@ -7,26 +7,29 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <header>
+    <header class="top_header">
       <nav>
-          <% if user_signed_in? %>
-            <% if current_user.username.nil? || (current_user.username == "") %>
-              <strong><%= link_to "ユーザー名を設定してください", edit_user_registration_path %></strong>
+        <%= link_to 'StudyLibrary', root_path, class: "top_header_top_link" %>
+          <div class="top_header_container">
+            <% if user_signed_in? %>
+                <% if current_user.username.nil? || (current_user.username == "") %>
+                  <strong><%= link_to "ユーザー名を設定してください", edit_user_registration_path %></strong>
+                <% else %>
+                  <%= link_to current_user.username, pages_show_path %>
+                <% end %>
+              <%= link_to 'プロフィール変更', edit_user_registration_path %>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
             <% else %>
-              <strong><%= link_to current_user.username, pages_show_path %></strong>
+              <%= link_to 'ログイン', new_user_session_path %>
             <% end %>
-            <%= link_to '記事一覧', articles_path %>
-            <%= link_to 'Tips一覧', tips_path %>
-            <%= link_to '質問一覧', rooms_index_path %>
-            <%= link_to 'Note一覧', notes_path %>
-            <%= link_to 'プロフィール変更', edit_user_registration_path %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-          <% else %>
-            <%= link_to 'ログイン', new_user_session_path %>
-          <% end %>
+            <%# <div class="top_header_new_button"> %>
+              <%= link_to '新規投稿', new_article_path, class: "top_header_new_link" %>
+            <%# </div> %>
+          </div>
       </nav>
     </header>
     <p class="notice"><%= notice %></p>

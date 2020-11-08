@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'rooms/index'
   get 'rooms/new'
   get 'pages/show'
+  get 'pages/articles'
+  get 'pages/tips'
   resources :rooms
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'

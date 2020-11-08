@@ -1,14 +1,14 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<h1><%= @article.title %></h1>
 
-<p>
-  <strong>Content:</strong>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+
+<div>
   <%= @article.content %>
-</p>
+</div>
 
-質問一覧
+<details>
+<summary>質問一覧</summary>
 
 <div>
   <ul>
@@ -23,8 +23,4 @@
   <%= f.text_field :title %>
   <%= f.submit %>
 <% end %>
-
-<%#= render "rooms/new" %>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+</details>
