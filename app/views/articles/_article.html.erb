@@ -1,19 +1,31 @@
 <td><%= article.title %></td>
-<% if current_user.liked_by?(article.id) %>
-  <td>
-  <%= link_to destroy_like_path(article), class: "like-link", method: :DELETE, remote: true do %>
-    <i class="fa fa-heart unlike-btn"></i>
+
+<% if user_signed_in? %>
+  <% if current_user.liked_by?(article.id) %>
+    <td>
+    <%= link_to destroy_like_path(article), class: "like-link", method: :DELETE, remote: true do %>
+      <i class="fa fa-heart unlike-btn"></i>
+    <% end %>
+    <%= article.likes.count %></td>
+  <% else %>
+    <td>
+    <%= link_to create_like_path(article), class: "like-link", method: :POST, remote: true do %>
+      <i class="fa fa-heart like-btn"></i>
+    <% end %>
+    <%= article.likes.count %></td>
   <% end %>
-  <%= article.likes.count %></td>
 <% else %>
   <td>
-  <%= link_to create_like_path(article), class: "like-link", method: :POST, remote: true do %>
+  <%= link_to new_user_session_path do %>
     <i class="fa fa-heart like-btn"></i>
   <% end %>
   <%= article.likes.count %></td>
 <% end %>
+
 <td><%= article.content %></td>
+
 <td><%= link_to 'Show', article %></td>
+
 <% if user_signed_in? && current_user.id == article.user_id %>
   <td><%= link_to 'Edit', edit_article_path(article) %></td>
   <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>

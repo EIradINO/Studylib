@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Studylib</title>
+    <title>StudyTips</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,7 +13,7 @@
   <body>
     <header class="top_header">
       <nav>
-        <%= link_to 'StudyLibrary', root_path, class: "top_header_top_link" %>
+        <%= link_to 'StudyTips', root_path, class: "top_header_top_link" %>
           <div class="top_header_container">
             <% if user_signed_in? %>
                 <% if current_user.username.nil? || (current_user.username == "") %>

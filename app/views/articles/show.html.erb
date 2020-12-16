@@ -18,9 +18,9 @@
   </ul>
 </div>
 
-<%= form_with model: @room do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.submit %>
+<%= form_with model: @room do |room| %>
+  <%= room.label :title %>
+  <%= room.text_field :title %>
+  <%= room.submit %>
 <% end %>
 </details>
