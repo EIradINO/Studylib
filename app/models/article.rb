@@ -6,4 +6,5 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
   accepts_nested_attributes_for :artips
+  has_rich_text :content
 end
