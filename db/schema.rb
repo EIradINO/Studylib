@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2020_12_18_080736) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -64,7 +63,6 @@ ActiveRecord::Schema.define(version: 2020_12_18_080736) do
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

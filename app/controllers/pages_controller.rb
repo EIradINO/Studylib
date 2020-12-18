@@ -8,8 +8,4 @@ class PagesController < ApplicationController
   def articles
     @articles = Article.all
   end
-
-  def tips
-    @tips = Tip.all
-  end
 end
