@@ -1,0 +1,2 @@
+module ArtipsHelper
+end

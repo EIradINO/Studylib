@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @rooms = Article.find(params[:id]).rooms
+    @artips = Article.find(params[:id]).artips
     @room = Room.new
     @article = Article.find(params[:id])
     $article_id = Article.find(params[:id]).id
@@ -19,6 +20,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @article.artips.build
   end
 
   # GET /articles/1/edit
@@ -76,7 +78,7 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :content).merge(user_id: current_user.id)
+      params.require(:article).permit(:title, :content, artips_attributes: [:content]).merge(user_id: current_user.id)
     end
 
     def redirect_root

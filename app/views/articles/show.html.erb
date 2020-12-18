@@ -7,6 +7,14 @@
   <%= @article.content %>
 </div>
 
+<div>
+  <ul>
+    <% @artips.each do |artip| %>
+      <li><%= artip.content %></li>
+    <% end %>
+  </ul>
+</div>
+
 <details>
 <summary>質問一覧</summary>
 

@@ -21,6 +21,11 @@
     <%= form.text_area :content %>
   </div>
 
+  <%= form.fields_for :artips do |artip| %>
+    <%= artip.label :content %>
+    <%= artip.text_field :content %>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
