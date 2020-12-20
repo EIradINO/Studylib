@@ -1,21 +1,79 @@
-<%# <div class="pages_welcome_container">
-  <div class="pages_welcome_message">
-    <h1>Welcome Message!!</h1>
-  </div>
-  <div class="pages_welcome_image_container">
+<div class="pages_welcome_container">
+  <div class="pages_welcome_flexbox">
+    <div class="pages_welcome_message">
+      <h1>１日５分から始める心地の良い勉強習慣作り</h1>
+      <p>WelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcomeWelcome</p>
+    </div>
     <img src="/assets/top_image.svg" class="pages_welcome_image">
   </div>
-
-</div> %>
-
-<div class="pages_roadmap">
-<%# <h2>ロードマップ</h2> %>
-<div>
-<%= link_to "数学", articles_path %>
 </div>
 
-<div class="pages_new_contents">
-<nav>
-  <%= link_to "新着記事", pages_articles_path %>
-</nav>
+<div class="orange-ball" id="orange-ball1"></div>
+<div class="orange-ball" id="orange-ball2"></div>
+<div class="orange-ball" id="orange-ball3"></div>
+<div class="orange-ball" id="orange-ball4"></div>
+
+<div class="pages_roadmap">
+  <div class="pages_roadmap_desctibe">
+    <h1 class="pages_roadmap_title">RoadMap</h1>
+    <p>describedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribe</p>
+  </div>
+
+  <div class="pages_roadmap_container">
+    <div class="pages_roadmap_subject" id="pages_roadmap_english">
+      <%= link_to articles_path, class: "pages_roadmap_link" do %>
+        <div class="pages_roadmap_inner">
+          <p class="pages_roadmap_subject_title">English</p>
+          <img src="assets/Language.svg" class="pages_roadmap_picture">
+        </div>
+      <% end %>
+    </div>
+
+
+    <div class="pages_roadmap_subject" id="pages_roadmap_worldhistory">
+      <%= link_to articles_path, class: "pages_roadmap_link" do %>
+        <div class="pages_roadmap_inner">
+          <p class="pages_roadmap_subject_title">World History</p>
+          <img src="assets/Geology.svg" class="pages_roadmap_picture">
+        </div>
+      <% end %>
+    </div>
+
+    <div class="pages_roadmap_subject" id="pages_roadmap_chemistry">
+      <%= link_to articles_path, class: "pages_roadmap_link" do %>
+        <div class="pages_roadmap_inner">
+          <p class="pages_roadmap_subject_title">Chemistry</p>
+          <img src="assets/Chemistry.svg" class="pages_roadmap_picture">
+        </div>
+      <% end %>
+    </div>
+
+    <div class="pages_roadmap_subject" id="pages_roadmap_math">
+      <%= link_to articles_path, class: "pages_roadmap_link" do %>
+        <div class="pages_roadmap_inner">
+          <p class="pages_roadmap_subject_title">Math</p>
+          <img src="assets/Math.svg" class="pages_roadmap_picture">
+        </div>
+      <% end %>
+    </div>
+
+    <div class="pages_roadmap_subject" id="pages_roadmap_physics">
+      <%= link_to articles_path, class: "pages_roadmap_link" do %>
+        <div class="pages_roadmap_inner">
+          <p class="pages_roadmap_subject_title">Physics</p>
+          <img src="assets/Momentum.svg" class="pages_roadmap_picture">
+        </div>
+      <% end %>
+    </div>
+
+    <div class="pages_roadmap_subject" id="pages_roadmap_test">
+      <%= link_to articles_path, class: "pages_roadmap_link" do %>
+        <div class="pages_roadmap_inner">
+          <p class="pages_roadmap_subject_title">Test</p>
+          <img src="assets/Test.svg" class="pages_roadmap_picture">
+        </div>
+      <% end %>
+    </div>
+
+  </div>
 </div>

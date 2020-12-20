@@ -1,0 +1,210 @@
+
+// welcome-container
+
+.pages_welcome_image {
+  width: 50vw;
+  z-index: 2;
+}
+
+.pages_welcome_message {
+  background-color: var(--white);
+  width: 40vw;
+  height: 40vw;
+  margin: 2vw;
+  padding: 1vw;
+  border-radius: 2vw;
+  word-break : break-all;
+  z-index: 2;
+}
+
+.pages_welcome_flexbox {
+  display: flex;
+  flex-wrap:nowrap;
+  justify-content: center;
+}
+
+.pages_welcome_container {
+  height: 50vw;
+  background-color: var(--light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.orange-ball {
+  position: absolute;
+  width: 25vw;
+  height: 25vw;
+  background-color: var(--orange);
+  border-radius: 50%;
+  z-index: 1;
+  top: 0;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+  opacity: 0.5;
+}
+
+#orange-ball1 {
+  top: -10vw;
+  left: -5vw;
+  animation-name: anim_v1;
+}
+
+#orange-ball2 {
+  top: -7.5vw;
+  left: 55vw;;
+  animation-name: anim_v2;
+}
+
+#orange-ball3 {
+  top: 40vw;
+  left: 15vw;
+  animation-name: anim_v3;
+}
+
+#orange-ball4 {
+  top: 37.5vw;
+  left: 70vw;
+  animation-name: anim_v4;
+}
+
+@keyframes anim_v1 {
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  100% {
+    transform: translate(0, 20px);
+  }
+}
+
+@keyframes anim_v2 {
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  100% {
+    transform: translate(0, 20px);
+  }
+}
+
+@keyframes anim_v3 {
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  100% {
+    transform: translate(0, -20px);
+  }
+}
+
+@keyframes anim_v4 {
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  100% {
+    transform: translate(0, -20px);
+  }
+}
+
+
+// roadmap
+
+.pages_roadmap {
+  // display: flex;
+  position: relative;
+  height: 45vw;
+  padding: 2.5vw 0 2.5vw 0;
+  background-color: var(--light-orange);
+  z-index: 2;
+  // align-items: center;
+}
+
+.pages_roadmap_container {
+  width: 85%;
+  padding: 2.5%;
+  margin: auto;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: unset;
+  align-items: center;
+}
+
+.pages_roadmap_container::-webkit-scrollbar {
+  display: none;
+}
+
+.pages_roadmap_subject {
+  min-width: 20vw;
+  height: 30vw;
+  border-radius: 2vw;
+  margin-right: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.pages_roadmap_desctibe {
+  width: 90%;
+  margin: auto;
+  word-break : break-all;
+}
+
+.pages_roadmap_title {
+  font-family: 'Damion', cursive;
+  font-size: 2em;
+}
+
+.pages_roadmap_picture {
+  width: 75%;
+}
+
+
+
+.pages_roadmap_subject_title {
+  margin-bottom: 50px;
+  color: black;
+}
+
+.pages_roadmap_inner {
+  text-align: center;
+}
+
+#pages_roadmap_english {
+  background-color: #ffffaa;
+}
+
+#pages_roadmap_worldhistory {
+  background-color: #ffaaff;
+}
+
+#pages_roadmap_chemistry {
+  background-color: #aaffff;
+}
+
+#pages_roadmap_math {
+  background-color: #aaaaff;
+}
+
+#pages_roadmap_physics {
+  background-color: #aaffaa;
+}
+
+#pages_roadmap_test {
+  background-color: #ffaaaa;
+}
+
+.pages_roadmap_link {
+  font-size: 2em;
+  font-family: 'Damion', cursive;
+}
+
+.pages_roadmap_link:hover {
+  text-decoration: underline;
+}

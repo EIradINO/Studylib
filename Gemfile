@@ -61,3 +61,5 @@ gem 'dotenv-rails'
 
 # font
 gem 'font-awesome-sass'
+
+gem 'bootstrap-sass'

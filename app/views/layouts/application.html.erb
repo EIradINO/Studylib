@@ -17,23 +17,24 @@
           <div class="top_header_container">
             <% if user_signed_in? %>
                 <% if current_user.username.nil? || (current_user.username == "") %>
-                  <strong><%= link_to "ユーザー名を設定してください", edit_user_registration_path %></strong>
+                  <div class="top_header_button"><%= link_to "ユーザー名を設定してください", edit_user_registration_path, class: "top_header_link" %></div>
                 <% else %>
-                  <%= link_to current_user.username, pages_show_path %>
+                  <div class="top_header_button"><%= link_to current_user.username, pages_show_path, class: "top_header_link" %></div>
                 <% end %>
-              <%= link_to 'プロフィール変更', edit_user_registration_path %>
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+              <div class="top_header_button"><%= link_to 'プロフィール変更', edit_user_registration_path, class: "top_header_link" %></div>
+              <div class="top_header_button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "top_header_link" %></div>
             <% else %>
-              <%= link_to 'ログイン', new_user_session_path %>
+              <div class="top_header_button"><%= link_to 'ログイン', new_user_session_path, class: "top_header_link" %></div>
             <% end %>
-            <%# <div class="top_header_new_button"> %>
-              <%= link_to '新規投稿', new_article_path, class: "top_header_new_link" %>
-            <%# </div> %>
+              <div class="top_header_button"><%= link_to '新規投稿', new_article_path, class: "top_header_link top_header_post" %></div>
           </div>
       </nav>
     </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+
+    </div>
   </body>
 </html>
