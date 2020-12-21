@@ -147,7 +147,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.8;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .pages_roadmap_desctibe {
@@ -177,31 +177,31 @@
 }
 
 #pages_roadmap_english {
-  background-color: #ffffaa;
+  background-color: #ffffcc;
 }
 
 #pages_roadmap_worldhistory {
-  background-color: #ffaaff;
+  background-color: #ffccff;
 }
 
 #pages_roadmap_chemistry {
-  background-color: #aaffff;
+  background-color: #ccffff;
 }
 
 #pages_roadmap_math {
-  background-color: #aaaaff;
+  background-color: #ccccff;
 }
 
 #pages_roadmap_physics {
-  background-color: #aaffaa;
+  background-color: #ccffcc;
 }
 
 #pages_roadmap_test {
-  background-color: #ffaaaa;
+  background-color: #ffcccc;
 }
 
 .pages_roadmap_link {
-  font-size: 2em;
+  font-size: 2.5vw;
   font-family: 'Damion', cursive;
 }
 

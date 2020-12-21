@@ -39,7 +39,7 @@ a {
 }
 
 body {
-  // width: 100vw;
+  background-color: var(--light-orange);
 }
 
 nav {
@@ -89,4 +89,15 @@ nav {
   color: #fff;
   background: var(--orange);
   border-radius: 3px;
+}
+
+.gray_container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 60vw;
+  background-color: var(--light-gray);
+  padding: 5vw 2.5vw 10vw 2.5vw;
+  margin: 3vw 0;
+  position: relative;
 }

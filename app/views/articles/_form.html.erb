@@ -1,8 +1,7 @@
-<%= form_with(model: article, local: true) do |form| %>
+<%= form_with(model: article, class: "article_form", local: true) do |form| %>
   <% if article.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
       <ul>
         <% article.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -11,22 +10,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="article_form_contain" id="article_form_title">
+    <%= form.text_field :title, placeholder: "タイトル" %>
   </div>
 
-  <div class='field'>
-    <%= form.label :content %>
-    <%= form.rich_text_area :content %>
+  <div class='article_form_contain' id="article_form_content">
+    <%= form.rich_text_area :content, placeholder: "記事を入力..." %>
   </div>
 
-  <%= form.fields_for :artips do |artip| %>
-    <%= artip.label :content %>
-    <%= artip.text_field :content %>
-  <% end %>
+  <%#= form.fields_for :artips do |artip| %>
+    <%#= artip.label :content %>
+    <%#= artip.text_field :content %>
+  <%# end %>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="article_form_contain" id="article_form_submit">
+    <%= form.submit "投稿", class: "article_form_button" %>
   </div>
 <% end %>
