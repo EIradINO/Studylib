@@ -39,10 +39,7 @@ a {
 }
 
 body {
-  background-color: var(--light-orange);
-}
-
-nav {
+  background-color: var(--light-gray);
 }
 
 .top_header {
@@ -70,6 +67,7 @@ nav {
 
 .container {
   padding-top: 60px;
+
 }
 
 .top_header_button {
@@ -91,13 +89,13 @@ nav {
   border-radius: 3px;
 }
 
-.gray_container {
+.white_container {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
   width: 60vw;
-  background-color: var(--light-gray);
-  padding: 5vw 2.5vw 10vw 2.5vw;
+  background-color: var(--white);
+  padding: 5vw 3vw 10vw 3vw;
   margin: 3vw 0;
   position: relative;
 }

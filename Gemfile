@@ -63,3 +63,6 @@ gem 'dotenv-rails'
 gem 'font-awesome-sass'
 
 gem 'bootstrap-sass'
+
+# 日本語化
+gem 'i18n_generators'

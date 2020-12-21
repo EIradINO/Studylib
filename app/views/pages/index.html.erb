@@ -20,6 +20,16 @@
   </div>
 
   <div class="pages_roadmap_container">
+
+    <div class="pages_roadmap_subject" id="pages_roadmap_test">
+      <%= link_to articles_path, class: "pages_roadmap_link" do %>
+        <div class="pages_roadmap_inner">
+          <p class="pages_roadmap_subject_title">Test</p>
+          <img src="assets/Test.svg" class="pages_roadmap_picture">
+        </div>
+      <% end %>
+    </div>
+
     <div class="pages_roadmap_subject" id="pages_roadmap_english">
       <%= link_to articles_path, class: "pages_roadmap_link" do %>
         <div class="pages_roadmap_inner">
@@ -62,15 +72,6 @@
         <div class="pages_roadmap_inner">
           <p class="pages_roadmap_subject_title">Physics</p>
           <img src="assets/Momentum.svg" class="pages_roadmap_picture">
-        </div>
-      <% end %>
-    </div>
-
-    <div class="pages_roadmap_subject" id="pages_roadmap_test">
-      <%= link_to articles_path, class: "pages_roadmap_link" do %>
-        <div class="pages_roadmap_inner">
-          <p class="pages_roadmap_subject_title">Test</p>
-          <img src="assets/Test.svg" class="pages_roadmap_picture">
         </div>
       <% end %>
     </div>

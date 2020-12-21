@@ -47,3 +47,86 @@
 .trix-button-row {
   margin-bottom: 30px;
 }
+
+trix-editor {
+  border: none;
+}
+
+.article_show {
+  position: relative;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.article_show h1 {
+  font-size: 2em;
+  margin-bottom: 50px;
+  border-bottom: double 5px #333
+}
+
+.article_show h2 {
+  font-size: 1.3333em;
+  background: #eeeeee;
+  padding: 0.5em;
+  border-left: solid 0.375em #000;
+  margin-top: 60px;
+}
+
+.article_show h3 {
+  font-size: 1.1666em;
+  padding: 0.125em 0.75em;
+  border-left: 4px solid #aaaaaa;
+  margin-top: 40px;
+}
+
+.article_show h4, h5, h6 {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.article_show ol {
+  padding: 0 20px;
+}
+
+.article_show ul {
+  padding: 0 20px;
+}
+
+.article_show_info {
+  width: 90%;
+  position: absolute;
+  top: 2vw;
+}
+
+.article_show_username {
+  font-size: 0.9em;
+  margin-right: 2.5vw;
+}
+
+.article_username_button:hover {
+  text-decoration: underline;
+}
+
+.article_username_button {
+  color: #999;
+}
+
+.article_show_updated {
+  font-size: 0.75em;
+  color: #999;
+}
+
+.article_show_edit {
+  float: right;
+}
+
+.article_edit_button:hover {
+  background-color: #ddd;
+}
+
+.article_edit_button {
+  font-size: 0.75em;
+  padding: 0.25vw 1vw;
+  background-color: var(--light-gray);
+  border-radius: 0.25vw;
+}

@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @user = User.find(@article.user_id)
     @rooms = Article.find(params[:id]).rooms
     @artips = Article.find(params[:id]).artips
     @room = Room.new

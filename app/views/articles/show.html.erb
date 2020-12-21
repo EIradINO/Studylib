@@ -1,34 +1,43 @@
-<h1><%= @article.title %></h1>
+<div class="white_container article_show">
+  <div class="article_show_info">
+    <span class="article_show_username"><%= link_to "@" + @user.username, articles_path, class: "article_username_button" %>が作成</span>
+    <span class="article_show_updated"><%= l @article.updated_at, format: :long %>に更新</span>
+    <span class="article_show_edit">
+      <% if user_signed_in? && current_user.id == @article.user_id %>
+        <%= link_to '編集する', edit_article_path(@article), class: "article_edit_button" %>
+      <% end %>
+    </span>
+  </div>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+  <h1><%= @article.title %></h1>
 
-<div>
-  <%= @article.content %>
+  <div>
+    <%= @article.content %>
+  </div>
+
+  <div>
+    <ul>
+      <% @artips.each do |artip| %>
+        <li><%= artip.content %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <details>
+  <summary class="article_question">質問一覧</summary>
+
+  <div>
+    <ul>
+      <% @rooms.each do |room| %>
+        <li><%= link_to room.title, room_path(room) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <%= form_with model: @room do |room| %>
+    <%= room.label :title %>
+    <%= room.text_field :title %>
+    <%= room.submit %>
+  <% end %>
+  </details>
 </div>
-
-<div>
-  <ul>
-    <% @artips.each do |artip| %>
-      <li><%= artip.content %></li>
-    <% end %>
-  </ul>
-</div>
-
-<details>
-<summary>質問一覧</summary>
-
-<div>
-  <ul>
-    <% @rooms.each do |room| %>
-      <li><%= link_to room.title, room_path(room) %></li>
-    <% end %>
-  </ul>
-</div>
-
-<%= form_with model: @room do |room| %>
-  <%= room.label :title %>
-  <%= room.text_field :title %>
-  <%= room.submit %>
-<% end %>
-</details>
