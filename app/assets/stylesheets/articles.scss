@@ -130,3 +130,11 @@ trix-editor {
   background-color: var(--light-gray);
   border-radius: 0.25vw;
 }
+
+trix-editor h1 {
+  font-size: 1.3333em;
+  background: #eeeeee;
+  padding: 0.5em;
+  border-left: solid 0.375em #000;
+  margin-top: 60px;
+}
