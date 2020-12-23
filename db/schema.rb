@@ -74,25 +74,12 @@ ActiveRecord::Schema.define(version: 2020_12_18_085517) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "notes", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "rooms", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "article_id"
     t.string "title"
     t.integer "user_id"
-  end
-
-  create_table "tips", force: :cascade do |t|
-    t.string "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
