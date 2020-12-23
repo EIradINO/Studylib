@@ -69,6 +69,6 @@ class ArtipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def artip_params
-      params.require(:artip).permit(:content).merge(article_id: 0)
+      params.require(:artip).permit(:content).merge(article_id: 2)
     end
 end

@@ -9,9 +9,9 @@
     </span>
   </div>
 
-  <h1><%= @article.title %></h1>
+  <h1 class="article_show_title" ><%= @article.title %></h1>
 
-  <div>
+  <div class="article_show_content">
     <%= @article.content %>
   </div>
 
@@ -40,4 +40,11 @@
     <%= room.submit %>
   <% end %>
   </details>
+
+  <% if current_user.liked_by?(@article.id) %>
+      <td><%= link_to 'いいねを外す', destroy_like_path(@article), method: :DELETE %></td>
+    <% else %>
+      <td><%= link_to 'いいね', create_like_path(@article), method: :POST %></td>
+  <% end %>
+
 </div>

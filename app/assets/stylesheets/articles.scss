@@ -58,37 +58,39 @@ trix-editor {
   line-height: 1.5;
 }
 
-.article_show h1 {
+.article_show_title {
   font-size: 2em;
   margin-bottom: 50px;
   border-bottom: double 5px #333
 }
 
-.article_show h2 {
+.article_show_content h1 {
   font-size: 1.3333em;
-  background: #eeeeee;
+  background: #f1f1f1;
   padding: 0.5em;
   border-left: solid 0.375em #000;
   margin-top: 60px;
 }
 
-.article_show h3 {
+.article_show_content h2 {
   font-size: 1.1666em;
   padding: 0.125em 0.75em;
   border-left: 4px solid #aaaaaa;
   margin-top: 40px;
 }
 
-.article_show h4, h5, h6 {
+.article_show_content h4,
+h5,
+h6 {
   font-size: 1em;
   font-weight: 700;
 }
 
-.article_show ol {
+.article_show_content ol {
   padding: 0 20px;
 }
 
-.article_show ul {
+.article_show_content ul {
   padding: 0 20px;
 }
 
@@ -133,8 +135,7 @@ trix-editor {
 
 trix-editor h1 {
   font-size: 1.3333em;
-  background: #eeeeee;
+  background: #f1f1f1;
   padding: 0.5em;
   border-left: solid 0.375em #000;
-  margin-top: 60px;
 }
