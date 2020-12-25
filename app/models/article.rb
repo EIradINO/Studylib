@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
   belongs_to :user
+  has_many :arlikes, dependent: :destroy
   has_many :rooms, dependent: :destroy
   has_many :artips, dependent: :destroy
   validates :title, presence: true

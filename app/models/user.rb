@@ -9,6 +9,11 @@ class User < ApplicationRecord
     end
   end
 
+  def arliked_by?(article_id)
+    arlikes.where(article_id: article_id).exists?
+  end
+
   has_many :articles, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :arlikes, dependent: :destroy
 end
