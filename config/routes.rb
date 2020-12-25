@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'rooms/index'
   get 'rooms/new'
   get 'pages/show'
-  resources :users, only: [:show]
   get 'pages/articles'
   resources :rooms
   post 'arlike/:id' => 'arlikes#create', as: 'create_arlike'
