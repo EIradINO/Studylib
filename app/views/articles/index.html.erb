@@ -12,7 +12,7 @@
 
   <tbody>
     <% @articles.each do |article| %>
-      <tr id="article_<%= article.id %>">
+      <tr>
         <%= render 'article', article: article %>
       </tr>
     <% end %>

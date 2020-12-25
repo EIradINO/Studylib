@@ -14,8 +14,8 @@
  *= require_self
  */
 
-@import "font-awesome-sprockets";
-@import "font-awesome";
+// @import "font-awesome-sprockets";
+// @import "font-awesome";
 
 :root {
   --orange: #FF971D;
@@ -98,4 +98,5 @@ body {
   padding: 5vw 3vw 10vw 3vw;
   margin: 3vw 0;
   position: relative;
+  word-break : break-all;
 }
