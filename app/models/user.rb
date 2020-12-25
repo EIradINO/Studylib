@@ -13,7 +13,12 @@ class User < ApplicationRecord
     arlikes.where(article_id: article_id).exists?
   end
 
+  def tipliked_by?(artip_id)
+    tiplikes.where(artip_id: artip_id).exists?
+  end
+
   has_many :articles, dependent: :destroy
+  has_many :tiplikes, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :arlikes, dependent: :destroy
 end

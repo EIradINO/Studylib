@@ -12,10 +12,7 @@
     <tbody>
       <% @artips.each do |artip| %>
         <tr>
-          <td><%= artip.content %></td>
-          <td><%= link_to 'Show', artip %></td>
-          <td><%= link_to 'Edit', edit_artip_path(artip) %></td>
-          <td><%= link_to 'Destroy', artip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%= render 'artip', artip: artip %>
         </tr>
       <% end %>
     </tbody>

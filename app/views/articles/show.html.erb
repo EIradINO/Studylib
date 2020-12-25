@@ -41,19 +41,7 @@
   <% end %>
   </details>
 
-  <div id="article_<%= @article.id %>">
-    <% if current_user.arliked_by?(@article.id) %>
-      <%= link_to destroy_arlike_path(@article), class: "like-link", method: :DELETE, remote: true do %>
-        <i class="fa fa-heart unlike-btn"></i>
-      <% end %>
-      <%= @article.arlikes.count %>
-    <% else %>
-      <%= link_to create_arlike_path(@article), class: "like-link", method: :POST, remote: true do %>
-        <i class="fa fa-heart like-btn"></i>
-      <% end %>
-      <%= @article.arlikes.count %>
-    <% end %>
-  </div>
+  <%= render 'arlikes/arlike' %>
 
   <%= link_to 'Back', articles_path %>
 </div>
