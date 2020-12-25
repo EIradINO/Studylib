@@ -1,6 +1,6 @@
 <div class="white_container">
   <h1>いいねしたTips</h1>
     <% @tiplikes.each do |tiplike| %>
-      <%= Artip.find_by(id: tiplike.artip_id).content %>
+      <p><%= link_to Artip.find_by(id: tiplike.artip_id).content, artip_path(Artip.find_by(id: tiplike.artip_id)) %></p>
     <% end %>
 </div>

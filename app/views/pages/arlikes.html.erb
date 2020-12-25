@@ -2,6 +2,6 @@
 <h1>いいねした投稿</h1>
 <%= link_to 'いいねしたTips', pages_tiplikes_path, class: "top_header_link" %>
     <% @arlikes.each do |arlike| %>
-      <%= Article.find_by(id: arlike.article_id).content %>
+      <p><%= link_to Article.find_by(id: arlike.article_id).title, article_path(Article.find_by(id: arlike.article_id)) %></p>
     <% end %>
 </div>
