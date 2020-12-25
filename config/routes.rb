@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get 'rooms/index'
   get 'rooms/new'
   get 'pages/show'
-  get 'pages/articles'
+  get 'pages/arlikes'
+  get 'pages/tiplikes'
   resources :rooms
   post 'arlike/:id' => 'arlikes#create', as: 'create_arlike'
   delete 'arlike/:id' => 'arlikes#destroy', as: 'destroy_arlike'

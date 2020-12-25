@@ -1,18 +1,15 @@
 class PagesController < ApplicationController
-  before_action :set_user, only: [:show]
   def index
   end
 
   def show
   end
 
-  def articles
-    @articles = Article.all
+  def arlikes
+    @arlikes = Arlike.where(user_id: current_user.id)
   end
 
-  private
-
-  def set_user
-    @user = User.find([:id])
+  def tiplikes
+    @tiplikes = Tiplike.where(user_id: current_user.id)
   end
 end

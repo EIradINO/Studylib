@@ -22,6 +22,7 @@
                   <div class="top_header_button"><%= link_to current_user.username, pages_show_path, class: "top_header_link" %></div>
                 <% end %>
               <div class="top_header_button"><%= link_to 'プロフィール変更', edit_user_registration_path, class: "top_header_link" %></div>
+              <div class="top_header_button"><%= link_to 'いいねした投稿', pages_arlikes_path, class: "top_header_link" %></div>
               <div class="top_header_button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "top_header_link" %></div>
             <% else %>
               <div class="top_header_button"><%= link_to 'ログイン', new_user_session_path, class: "top_header_link" %></div>
