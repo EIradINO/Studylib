@@ -12,4 +12,8 @@ class PagesController < ApplicationController
   def tiplikes
     @tiplikes = Tiplike.where(user_id: current_user.id)
   end
+
+  def liketips
+    @liketips = Liketip.where(user_id: current_user.id)
+  end
 end

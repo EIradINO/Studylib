@@ -1,0 +1,11 @@
+<div class="white_container">
+<p>
+  <strong>Content:</strong>
+  <%= @tip.content %>
+</p>
+
+<%= render 'liketips/liketip' %>
+
+<%= link_to 'Edit', edit_tip_path(@tip) %> |
+<%= link_to 'Back', tips_path %>
+</div>

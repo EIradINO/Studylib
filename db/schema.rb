@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_25_080710) do
+ActiveRecord::Schema.define(version: 2020_12_26_013306) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -71,6 +71,13 @@ ActiveRecord::Schema.define(version: 2020_12_25_080710) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "liketips", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tip_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
@@ -94,6 +101,13 @@ ActiveRecord::Schema.define(version: 2020_12_25_080710) do
     t.integer "artip_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tips", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
