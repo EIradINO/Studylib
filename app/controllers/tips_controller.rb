@@ -69,6 +69,6 @@ class TipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tip_params
-      params.require(:tip).permit(:content).merge(user_id: current_user.id)
+      params.require(:tip).permit(:content, :item, images: []).merge(user_id: current_user.id)
     end
 end

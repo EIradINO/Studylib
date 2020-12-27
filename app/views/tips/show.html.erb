@@ -4,6 +4,14 @@
   <%= @tip.content %>
 </p>
 
+
+  <% if @tip.images.attached? %>
+    <% @tip.images.each do |image| %>
+      <%= image_tag image %>
+    <% end %>
+  <% end %>
+
+
 <%= render 'liketips/liketip' %>
 
 <%= link_to 'Edit', edit_tip_path(@tip) %> |

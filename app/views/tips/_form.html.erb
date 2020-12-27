@@ -16,6 +16,9 @@
     <%= form.text_area :content %>
   </div>
 
+  <%= form.file_field :images, multiple: true %>
+  <%#= form.file_field :images %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
