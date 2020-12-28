@@ -66,3 +66,6 @@ gem 'bootstrap-sass'
 
 # 日本語化
 gem 'i18n_generators'
+
+# 画像
+gem 'mini_magick'
