@@ -69,3 +69,6 @@ gem 'i18n_generators'
 
 # 画像
 gem 'mini_magick'
+
+# ページネーション
+gem 'kaminari'

@@ -7,4 +7,5 @@ class Article < ApplicationRecord
   validates :content, presence: true
   accepts_nested_attributes_for :artips
   has_rich_text :content
+  has_many :liked_users, through: :arlikes, source: :user
 end

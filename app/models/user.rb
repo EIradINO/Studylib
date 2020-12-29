@@ -27,4 +27,6 @@ class User < ApplicationRecord
   has_many :arlikes, dependent: :destroy
   has_many :tips,  dependent: :destroy
   has_many :liketips, dependent: :destroy
+  has_many :liked_tips, through: :liketips, source: :tip
+  has_many :liked_articles, through: :arlikes, source: :article
 end
