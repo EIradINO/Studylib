@@ -1,6 +1,6 @@
 <div class="white_container">
   <h1>いいねしたTips</h1>
     <% @liketips.each do |liketip| %>
-      <p><%= link_to Tip.find_by(id: liketip.tip_id).content, tip_path(Tip.find_by(id: liketip.tip_id)) %></p>
+      <p><%= Tip.find_by(id: liketip.tip_id).content %></p>
     <% end %>
 </div>

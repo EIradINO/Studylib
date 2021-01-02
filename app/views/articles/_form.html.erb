@@ -14,16 +14,18 @@
     <%= form.text_field :title, placeholder: "タイトル" %>
   </div>
 
-  <div id="text-button"><p id="text">クリック</p></div>
-
-   <div class='article_form_contain' id="article_form_content">
-    <%= form.rich_text_area :content, placeholder: "記事を入力..." %>
-  </div>
-
     <%= form.fields_for :artips do |artip| %>
-      <%= artip.label :content %>
       <%= artip.text_field :content %>
     <% end %>
+
+    <%= form.fields_for :containers do |container| %>
+      <div id="article_container0">
+        <%= container.rich_text_area :content %>
+      </div>
+    <% end %>
+
+    <div id="text"></div>
+    <p id="container">追加</p>
 
   <div class="article_form_contain" id="article_form_submit">
     <%= form.submit "投稿", class: "article_form_button" %>
