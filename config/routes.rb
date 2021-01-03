@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
   }
+  resources :users, :only => [:index]
+  resources :users, only: %i[show]
   root 'pages#index'
   get 'rooms/index'
   get 'rooms/new'

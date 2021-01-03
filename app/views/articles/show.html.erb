@@ -1,6 +1,6 @@
 <div class="white_container article_show">
   <div class="article_show_info">
-    <span class="article_show_username"><%= link_to "@" + @user.username, articles_path, class: "article_username_button" %>が作成</span>
+    <span class="article_show_username"><%= link_to "@" + @user.username, user_path(@user), class: "article_username_button" %>が作成</span>
     <span class="article_show_updated"><%= l @article.updated_at, format: :long %>に更新</span>
     <span class="article_show_edit">
       <% if user_signed_in? && current_user.id == @article.user_id %>
