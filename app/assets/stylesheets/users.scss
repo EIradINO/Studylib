@@ -1,3 +1,40 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.user_update_button {
+  background-color: var(--orange);
+  color: #fff;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.user_delete_button {
+  background-color: var(--white);
+  color: var(--orange);
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  margin-top: 5vw;
+}
+.edit_field {
+  font-size: 1.25em;
+  color: #333;
+  border: none;
+  width: 60%;
+  outline: none;
+  background: var(--light-gray);
+  height: 40px;
+  padding-left: 10px;
+  margin: 0.5vw 0 2vw 0;
+  border: 1px solid white;
+}
+
+.edit_field:focus {
+  border: 1px solid var(--orange);
+  box-shadow: 0 0 5px 1px rgb(255, 150, 0);
+}
+
+.user_edit_title {
+  margin-bottom: 3vw;
+}

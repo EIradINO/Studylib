@@ -15,6 +15,7 @@
   border-radius: 2vw;
   word-break : break-all;
   z-index: 2;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
 }
 
 .pages_welcome_title {
@@ -23,7 +24,7 @@
 }
 
 .pages_welcome_login {
-  background-color: var(--white);
+  background-color: var(--light-gray);
 }
 
 .pages_welcome_signup {
@@ -34,10 +35,15 @@
 
 .pages_welcome_link {
   padding: 1vw 2vw;
-  border: 1px solid black;
   border-radius: 3px;
   margin: 1vw;
   font-size: 1.1em;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  transition: .25s;
+}
+
+.pages_welcome_link:hover {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
 }
 
 .pages_welcome_session {

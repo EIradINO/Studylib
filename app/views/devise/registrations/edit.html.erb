@@ -1,17 +1,17 @@
 <div class="white_container">
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h1 class="user_edit_title">プロフィールを編集する</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+    <%= f.label :username, "ユーザー名", class: "edit_label" %><br />
+    <%= f.text_field :username, autocomplete: "username", class: "edit_field" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+    <%= f.label :email, "メールアドレス", class: "edit_label" %><br />
+    <%= f.email_field :email, autocomplete: "email", class: "edit_field" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,13 +19,9 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "更新する", class: "material_button user_update_button" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, class: "material_button user_delete_button" %>
 </div>

@@ -8,5 +8,6 @@
       <p>タグ: <%= Article.find_by(id: arlike.article_id).subject %></p>
       <i class="fa fa-heart unlike-btn"><%= Article.find_by(id: arlike.article_id).arlikes.count %></i>
     </div>
+    <hr>
     <% end %>
 </div>

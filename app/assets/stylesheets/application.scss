@@ -87,6 +87,12 @@ body {
   color: #fff;
   background: var(--orange);
   border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  transition: 0.25s;
+}
+
+.top_header_post:hover {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
 }
 
 .white_container {
@@ -99,4 +105,17 @@ body {
   margin: 3vw 0;
   position: relative;
   word-break : break-all;
+}
+
+.material_button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  transition: 0.25s;
+}
+
+.material_button:hover {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
 }
