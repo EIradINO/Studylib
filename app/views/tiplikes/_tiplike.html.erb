@@ -1,5 +1,5 @@
 <span id="artip_<%= @artip.id %>">
-  <% if current_user.tipliked_by?(@artip.id) %>
+  <% if user_signed_in? && current_user.tipliked_by?(@artip.id) %>
     <%= link_to destroy_tiplike_path(@artip), class: "like-link", method: :DELETE, remote: true do %>
       <i class="fa fa-heart unlike-btn"></i>
     <% end %>

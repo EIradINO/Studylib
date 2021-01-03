@@ -3,9 +3,17 @@ class PagesController < ApplicationController
     tips_default = Tip.order(id: "DESC").includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
     @tips_default = Kaminari.paginate_array(tips_default).page(params[:page]).per(5)
     @tips_time = Tip.order(id: "DESC")
+
+    articles_default = Article.order(id: "DESC").includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
+    @articles_default = Kaminari.paginate_array(articles_default).page(params[:page]).per(5)
+    @articles_time = Article.order(id: "DESC")
   end
 
   def show
+  end
+
+  def about
+
   end
 
   def arlikes
@@ -21,8 +29,6 @@ class PagesController < ApplicationController
   end
 
   def artimeline
-    @articles_default = Article.order(id: "DESC").includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
 
-    @articles_time = Article.order(id: "DESC")
   end
 end

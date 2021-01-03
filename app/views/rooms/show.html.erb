@@ -1,3 +1,4 @@
+<div class="white_container">
 <h1><%= @room.title %></h1>
 <div id='messages' data-room_id="<%= @room.id %>">
   <%= render @messages %>
@@ -5,3 +6,4 @@
 
 <%= label_tag :content, 'Say something:' %>
 <%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>
+</div>

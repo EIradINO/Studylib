@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'rooms/index'
   get 'rooms/new'
   get 'pages/show'
+  get 'pages/about'
   get 'pages/arlikes'
   get 'pages/tiplikes'
   get 'pages/liketips'

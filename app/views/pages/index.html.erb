@@ -1,12 +1,17 @@
 <% if user_signed_in? %>
-  <%= render :partial => "timeline" %>
+<div class="white_container">
+  <h1>トレンド</h1>
+  <%= link_to "人気記事", root_path, class: "pages_article_link" %>
+  <%= link_to "人気Tips", root_path, class: "pages_article_link" %>
+  <%= render 'artimeline' %>
+</div>
 <% else %>
-  <%= render :partial => "welcome" %>
+  <%= render 'welcome' %>
 <% end %>
 <div class="pages_roadmap">
   <div class="pages_roadmap_desctibe">
     <h1 class="pages_roadmap_title">RoadMap</h1>
-    <p>describedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribe</p>
+    <p>describedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribe</p>
   </div>
 
   <div class="pages_roadmap_container">

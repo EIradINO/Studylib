@@ -8,13 +8,53 @@
 
 .pages_welcome_message {
   background-color: var(--white);
-  width: 40vw;
-  height: 30vw;
+  width: 37vw;
+  height: 27vw;
   margin: 2vw;
-  padding: 1vw;
+  padding: 2.5vw;
   border-radius: 2vw;
   word-break : break-all;
   z-index: 2;
+}
+
+.pages_welcome_title {
+  font-size: 1.75em;
+  margin-bottom: 2vw;
+}
+
+.pages_welcome_login {
+  background-color: var(--white);
+}
+
+.pages_welcome_signup {
+  color: #fff;
+  background: var(--orange);
+  font-weight: bold;
+}
+
+.pages_welcome_link {
+  padding: 1vw 2vw;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 1vw;
+  font-size: 1.1em;
+}
+
+.pages_welcome_session {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.pages_welcome_about {
+  margin-top: 10px;
+  margin-right: 10px;
+  font-size: 1.1em;
+  float: right;
+}
+
+.pages_welcome_about:hover {
+  border-bottom: 2px solid #000;
 }
 
 .pages_welcome_flexbox {
@@ -207,4 +247,44 @@
 
 .pages_roadmap_link:hover {
   text-decoration: underline;
+}
+
+.pages_article {
+  display: flex;
+  flex-direction: column;
+  padding: 1vw;
+}
+
+.pages_article_title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.pages_article_title:hover {
+  text-decoration: underline;
+}
+
+.pages_article_like {
+  // background: black;
+  // float: right;
+}
+
+.pages_article_content {
+  height: 10vw;
+  overflow: hidden;
+}
+
+.pages_article_readmore:hover {
+  text-decoration: underline;
+}
+
+.pages_article_readmore {
+  color: #4c6cb3;
+}
+
+.pages_article_paginate {
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+  text-align: center;
+  font-size: 1.25em;
 }

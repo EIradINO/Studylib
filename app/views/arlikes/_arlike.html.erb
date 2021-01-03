@@ -1,5 +1,5 @@
   <div id="article_<%= @article.id %>">
-    <% if current_user.arliked_by?(@article.id) %>
+    <% if user_signed_in? && current_user.arliked_by?(@article.id) %>
       <%= link_to destroy_arlike_path(@article), class: "like-link", method: :DELETE, remote: true do %>
         <i class="fa fa-heart unlike-btn"></i>
       <% end %>

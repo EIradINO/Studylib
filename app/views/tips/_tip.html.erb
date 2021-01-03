@@ -1,6 +1,6 @@
 <td><%= tip.content %></td>
 
-<% if current_user.liketipd_by?(tip.id) %>
+<% if user_signed_in? && current_user.liketipd_by?(tip.id) %>
   <td id="tip_<%= tip.id %>">
     <%= link_to destroy_liketip_path(tip), class: "like-link", method: :DELETE, remote: true do %>
       <i class="fa fa-heart unlike-btn"></i>

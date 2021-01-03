@@ -8,8 +8,9 @@
 20.times do |n|
   Article.create!(
     title: "Article#{n + 1}",
-    content: "ArticleContent#{n + 1}",
-    user_id: 1
+    content: "ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}ArticleContent#{n + 1}",
+    user_id: 1,
+    subject: "数学"
   )
 end
 
