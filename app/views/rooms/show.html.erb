@@ -1,9 +1,7 @@
 <div class="white_container">
-<h1><%= @room.title %></h1>
-<div id='messages' data-room_id="<%= @room.id %>">
+<h1 class="room_title"><%= @room.title %></h1>
+<div id='messages' data-room_id="<%= @room.id %>" class="room_container">
   <%= render @messages %>
 </div>
-
-<%= label_tag :content, 'Say something:' %>
-<%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>
+<%= text_field_tag :content, nil, data: { behavior: 'room_speaker' }, class: "message_field", placeholder: "メッセージを入力..." %>
 </div>

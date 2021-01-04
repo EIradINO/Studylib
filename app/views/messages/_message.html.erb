@@ -1,3 +1,4 @@
 <div class='message'>
-  <p><%= "#{message.user.username}: #{message.content}" %></p>
+  <span class="message_username"><%= "#{message.user.username}" %>: </span>
+  <span class="message_content"><%= "#{message.content}" %></span>
 </div>
