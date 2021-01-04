@@ -22,7 +22,7 @@ $(function () {
   });
 
   $(document).on('keypress', '[data-behavior~=room_speaker]', function (event) {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 32) {
       chatChannel.speak(event.target.value);
       event.target.value = '';
       return event.preventDefault();
