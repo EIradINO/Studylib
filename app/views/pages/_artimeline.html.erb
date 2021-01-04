@@ -6,6 +6,7 @@
       <%= link_to article.title, article_path(article), class: "pages_article_title" %>
 
       <p>タグ: <%= article.subject %></p>
+      <p>分野: <%= article.field %></p>
 
       <div class="pages_article_content"><%= article.content %></div>
 

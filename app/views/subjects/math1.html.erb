@@ -1,0 +1,24 @@
+<div class="white_container">
+  <h1>数学Ⅰ+A</h1>
+  <ul>
+    <% @articles.each do |article| %>
+      <li><%= link_to article.title, article_path(article) %></li>
+    <% end %>
+  </ul>
+
+  <h2>数と式</h2>
+  <ul>
+    <% @articles.where(field: "数と式").each do |article| %>
+      <li><%= link_to article.title, article_path(article) %></li>
+    <% end %>
+  </ul>
+
+  <h2>二次関数</h2>
+  <ul>
+    <% @articles.where(field: "二次関数").each do |article| %>
+      <li><%= link_to article.title, article_path(article) %></li>
+    <% end %>
+  </ul>
+
+
+</div>

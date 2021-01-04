@@ -81,7 +81,7 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, artips_attributes: [:content], containers_attributes: [:content]).merge(user_id: current_user.id)
+      params.require(:article).permit(:title, :subject, :field, artips_attributes: [:content], containers_attributes: [:content]).merge(user_id: current_user.id)
     end
 
     def redirect_root

@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'subjects/exam'
+  get 'subjects/english'
+  get 'subjects/worldhistory'
+  get 'subjects/chemistry'
+  get 'subjects/math1'
+  get 'subjects/math2'
+  get 'subjects/physics'
   resources :containers
   resources :tips
   resources :artips
