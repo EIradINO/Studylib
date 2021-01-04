@@ -116,10 +116,12 @@ h6 {
 .article_show_updated {
   font-size: 0.75em;
   color: #999;
+  margin-right: 2.5vw;
 }
 
 .article_show_edit {
   float: right;
+  margin-right: 10%;
 }
 
 .article_edit_button:hover {
@@ -138,4 +140,68 @@ trix-editor h1 {
   background: #f1f1f1;
   padding: 0.5em;
   border-left: solid 0.375em #000;
+}
+
+.article_question, .details_room {
+  cursor: pointer;
+  padding: 1vw;
+  margin: 0.5vw 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  transition: 0.25s;
+  border-radius: 3px;
+}
+
+.article_question {
+  background-color: var(--orange);
+  font-weight: bold;
+  color: var(--white);
+}
+
+.details_room {
+  background-color: var(--light-gray);
+}
+
+.details_room:hover {
+  text-decoration: underline;
+}
+
+.details_room_link {
+  display: block;
+}
+
+.question_field {
+  font-size: 1em;
+  color: #333;
+  border: none;
+  width: 80%;
+  min-width: 50%;
+  outline: none;
+  background: var(--light-gray);
+  height: 40px;
+  padding-left: 10px;
+  border: 1px solid white;
+  margin-bottom: 3vw;
+  margin-top: 1vw;
+}
+
+.question_field:focus {
+  border: 1px solid var(--orange);
+  box-shadow: 0 0 5px 1px rgb(255, 150, 0);
+}
+
+.article_border {
+  margin: 2vw 0;
+}
+
+.question_label {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.question_button {
+  background-color: var(--orange);
+  color: #fff;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 4px;
 }

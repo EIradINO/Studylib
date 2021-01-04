@@ -119,3 +119,24 @@ body {
 .material_button:hover {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
 }
+
+summary {
+  outline: none;
+  border: none;
+}
+
+details[open] .details_content {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,13 +1,17 @@
   <div id="article_<%= @article.id %>">
     <% if user_signed_in? && current_user.arliked_by?(@article.id) %>
-      <%= link_to destroy_arlike_path(@article), class: "like-link", method: :DELETE, remote: true do %>
-        <i class="fa fa-heart unlike-btn"></i>
+    <div class="like-link on">
+      <%= link_to destroy_arlike_path(@article), method: :DELETE, remote: true do %>
+        <i class="fas fa-bookmark like"></i>
       <% end %>
-      <%= @article.arlikes.count %>
+      <p class="like_count"><%= @article.arlikes.count %></p>
+    </div>
     <% else %>
-      <%= link_to create_arlike_path(@article), class: "like-link", method: :POST, remote: true do %>
-        <i class="fa fa-heart like-btn"></i>
+    <div class="like-link off">
+      <%= link_to create_arlike_path(@article), method: :POST, remote: true do %>
+        <i class="fas fa-bookmark unlike" title="ブックマークする"></i>
       <% end %>
-      <%= @article.arlikes.count %>
+      <p class="unlike_count"><%= @article.arlikes.count %></p>
+    </div>
     <% end %>
   </div>

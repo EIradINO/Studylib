@@ -29,25 +29,25 @@
     </ul>
   </div>
 
-  <details>
+  <hr class="article_border">
+
+  <%= form_with model: @room do |room| %>
+    <p><%= room.label :title, "分からないことがあれば質問しよう！", class: "question_label" %></p>
+    <%= room.text_field :title, class: "question_field", placeholder: "質問のタイトルを入力すると、ルームが作成されます" %>
+    <%= room.submit "作成する", class: "question_button material_button" %>
+  <% end %>
+
+<details>
   <summary class="article_question">質問一覧</summary>
 
-  <div>
+  <div class="details_content">
     <ul>
       <% @rooms.each do |room| %>
-        <li><%= link_to room.title, room_path(room) %></li>
+        <li class="details_room"><%= link_to room.title, room_path(room), class: "details_room_link" %></li>
       <% end %>
     </ul>
   </div>
-
-  <%= form_with model: @room do |room| %>
-    <%= room.label :title %>
-    <%= room.text_field :title %>
-    <%= room.submit %>
-  <% end %>
-  </details>
+</details>
 
   <%= render 'arlikes/arlike' %>
-
-  <%= link_to 'Back', articles_path %>
 </div>

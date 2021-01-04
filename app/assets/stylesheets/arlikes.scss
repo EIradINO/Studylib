@@ -2,19 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .like-link {
-  text-decoration: none;
+  position: absolute;
+  left: 90%;
+  text-align: center;
 }
 
-.like-link:hover {
-  background-color: #fff !important;
+.fa-bookmark {
+
 }
 
-.like-btn {
-  font-size: 15px;
-  color: #808080;
+.off {
+  top: -10px;
 }
 
-.unlike-btn {
-  font-size: 15px;
-  color: #e54747;
+.on {
+  top: 0;
+}
+
+.like {
+  color: var(--orange);
+  font-size: 60px;
+}
+
+.unlike {
+  color: #ddd;
+  font-size: 60px;
+}
+
+.like_count {
+  color: var(--orange);
+}
+
+.unlike_count {
+  color: #ddd;
 }
