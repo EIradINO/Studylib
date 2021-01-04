@@ -140,3 +140,26 @@ details[open] .details_content {
     transform: none;
   }
 }
+
+.alert-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 2.5vw;
+  right: 2.5vw;
+  width: 15vw;
+  height: 4vw;
+  border-radius: 3px;
+  z-index: 10;
+  color: #28a745;
+}
+
+.alert {
+  margin: 0 !important;
+}
+
+.bootstrap {
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+}

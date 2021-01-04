@@ -33,10 +33,11 @@
       </nav>
     </header>
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <div class="bootstrap">
+      <div class="alert alert-success" role="alert"><%= notice %></div>
+      <div class="alert"><%= alert %></div>
+      </div>
       <%= yield %>
-
     </div>
   </body>
 </html>

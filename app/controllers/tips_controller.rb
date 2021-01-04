@@ -28,7 +28,7 @@ class TipsController < ApplicationController
 
     respond_to do |format|
       if @tip.save
-        format.html { redirect_to @tip, notice: 'Tip was successfully created.' }
+        format.html { redirect_to @tip, notice: 'Tipsを投稿しました' }
         format.json { render :show, status: :created, location: @tip }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TipsController < ApplicationController
   def update
     respond_to do |format|
       if @tip.update(tip_params)
-        format.html { redirect_to @tip, notice: 'Tip was successfully updated.' }
+        format.html { redirect_to @tip, notice: 'Tipsを更新しました' }
         format.json { render :show, status: :ok, location: @tip }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TipsController < ApplicationController
   def destroy
     @tip.destroy
     respond_to do |format|
-      format.html { redirect_to tips_url, notice: 'Tip was successfully destroyed.' }
+      format.html { redirect_to tips_url, notice: 'Tipsを削除しました' }
       format.json { head :no_content }
     end
   end
