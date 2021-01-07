@@ -16,10 +16,14 @@
     <%= form.text_area :content %>
   </div>
 
-  <%#= form.file_field :images %>
-    <%#= form_with(model: tip, local: true) do |form| %>
-      <%#= form.file_field :images %>
-  <%# end %>
+<div id="addbutton">add box</div>
+
+<div id="boxes">
+  <%= form.file_field :images, multiple: true, class: "box" %>
+</div>
+
+<div id="delete">delete</div>
+
 
   <div class="actions">
     <%= form.submit %>

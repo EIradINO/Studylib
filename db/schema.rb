@@ -72,13 +72,6 @@ ActiveRecord::Schema.define(version: 2021_01_04_072147) do
     t.integer "article_id"
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "article_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "liketips", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tip_id"
@@ -89,6 +82,10 @@ ActiveRecord::Schema.define(version: 2021_01_04_072147) do
   create_table "messages", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.integer "room_id", null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -130,4 +127,6 @@ ActiveRecord::Schema.define(version: 2021_01_04_072147) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "messages", "rooms"
+  add_foreign_key "messages", "users"
 end
