@@ -1,19 +1,19 @@
 <div class="white_container">
-<p>
-  <strong>Content:</strong>
-  <%= @tip.content %>
-</p>
 
-
-  <% if @tip.images.attached? %>
-    <% @tip.images.each do |image| %>
-      <%= image_tag image %>
-    <% end %>
-  <% end %>
-
-
-<%= render 'liketips/liketip' %>
-
-<%= link_to 'Edit', edit_tip_path(@tip) %> |
-<%= link_to 'Back', tips_path %>
+  <div style="display: flex;">
+    <div class="tip_image">
+      <% if @tip.images.attached? %>
+        <% @tip.images.each do |image| %>
+          <%= image_tag image.variant(gravity: :center, resize:"360x360^", crop:"360x360+0+0").processed %>
+        <% end %>
+      <% end %>
+    </div>
+    <div>
+      <div class="tip_content">
+      <strong class="tip_caption">Caption</strong>
+      <p><%= @tip.content %></p>
+      <%= render 'liketips/liketip' %>
+      </div>
+    </div>
+  </div>
 </div>

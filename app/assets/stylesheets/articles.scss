@@ -18,7 +18,7 @@
   color: #ccc;
 }
 
-#article_form_submit {
+.submit_form {
   float: right;
   position: absolute;
   bottom: 0;
@@ -26,7 +26,7 @@
   width: 100%;
 }
 
-.article_form_button {
+.submit_button {
     display: block;
     width: 100%;
     height: 50px;
@@ -40,7 +40,7 @@
     font-size: 1.25vw;
 }
 
-.article_form_button:hover {
+.submit_button:hover {
   background-position: right;
 }
 

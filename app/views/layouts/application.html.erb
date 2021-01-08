@@ -8,28 +8,42 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
   <body>
     <header class="top_header">
       <nav>
         <%= link_to 'StudyTips', root_path, class: "top_header_top_link" %>
-          <div class="top_header_container">
-            <% if user_signed_in? %>
-                <% if current_user.username.nil? || (current_user.username == "") %>
-                  <div class="top_header_button"><%= link_to "ユーザー名を設定してください", edit_user_registration_path, class: "top_header_link" %></div>
-                <% else %>
-                  <div class="top_header_button"><%= link_to current_user.username, pages_show_path, class: "top_header_link" %></div>
-                <% end %>
-              <div class="top_header_button"><%= link_to 'プロフィール変更', edit_user_registration_path, class: "top_header_link" %></div>
-              <div class="top_header_button"><%= link_to 'いいねした投稿', pages_arlikes_path, class: "top_header_link" %></div>
-              <div class="top_header_button"><%= link_to 'ユーザー一覧', users_path, class: "top_header_link" %></div>
-              <div class="top_header_button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "top_header_link" %></div>
-              <div class="top_header_button"><%= link_to '新規投稿', new_article_path, class: "top_header_link top_header_post" %></div>
-            <% else %>
-              <div class="top_header_button"><%= link_to 'ログイン', new_user_session_path, class: "top_header_link" %></div>
-            <% end %>
-          </div>
+        <div class="top_header_container">
+          <% if user_signed_in? %>
+              <% if current_user.username.nil? || (current_user.username == "") %>
+                <div class="top_header_button"><%= link_to "ユーザー名を設定してください", edit_user_registration_path, class: "top_header_link" %></div>
+              <% else %>
+                <div class="top_header_button"><%= link_to current_user.username, pages_show_path, class: "top_header_link" %></div>
+              <% end %>
+            <div class="top_header_button"><%= link_to 'プロフィール変更', edit_user_registration_path, class: "top_header_link" %></div>
+            <div class="top_header_button"><%= link_to 'いいねした投稿', pages_arlikes_path, class: "top_header_link" %></div>
+            <div class="top_header_button"><%= link_to 'ユーザー一覧', users_path, class: "top_header_link" %></div>
+            <div class="top_header_button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "top_header_link" %></div>
+
+            <div id="header_post_menu">
+              <div class="top_header_button"><div class="top_header_link top_header_post">新規投稿</div></div>
+              <div id="header_post_sub">
+                <ul>
+                  <li><%= link_to "記事作成", new_article_path %></li>
+                  <li><%= link_to "Tip投稿", new_tip_path %></li>
+                </ul>
+              </div>
+            </div>
+
+
+
+          <% else %>
+            <div class="top_header_button"><%= link_to 'ログイン', new_user_session_path, class: "top_header_link" %></div>
+          <% end %>
+        </div>
       </nav>
     </header>
     <div class="container">
@@ -41,3 +55,4 @@
     </div>
   </body>
 </html>
+<%= javascript_pack_tag 'applications/index' %>

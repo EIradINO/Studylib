@@ -1,3 +1,45 @@
 // Place all the styles related to the tips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.tip_form_content {
+  font-size: 1.5em;
+  outline: none;
+  border: none;
+  background: var(--light-gray);
+  line-height: 1.1em;
+  padding: 10px 20px;
+  min-width: 40vw;
+  height: 300px;
+}
+
+.center_container {
+  text-align: center;
+}
+
+.tip_post_button {
+  background-color: var(--orange);
+  color: #fff;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.count_button {
+  padding: 5px 10px;
+  color: var(--orange);
+}
+
+.tip_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vw;
+}
+
+.tip_content {
+  padding: 1.5vw 3vw;
+}
+
+.tip_caption {
+  font-family: 'Damion', cursive;
+  font-size: 1.5em;
+}

@@ -1,12 +1,12 @@
 <div id="tip_<%= @tip.id %>">
   <% if user_signed_in? && current_user.liketipd_by?(@tip.id) %>
-    <%= link_to destroy_liketip_path(@tip), class: "like-link", method: :DELETE, remote: true do %>
-      <i class="fa fa-heart unlike-btn"></i>
+    <%= link_to destroy_liketip_path(@tip), method: :DELETE, remote: true do %>
+      <i class="fa fa-heart" style="color: red;"></i>
     <% end %>
     <%= @tip.liketips.count %>
   <% else %>
-    <%= link_to create_liketip_path(@tip), class: "like-link", method: :POST, remote: true do %>
-      <i class="fa fa-heart like-btn"></i>
+    <%= link_to create_liketip_path(@tip), method: :POST, remote: true do %>
+      <i class="fa fa-heart" style="color: #ddd;"></i>
     <% end %>
     <%= @tip.liketips.count %>
   <% end %>

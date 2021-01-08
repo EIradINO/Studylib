@@ -1,13 +1,43 @@
-<% if user_signed_in? %>
+
 <div class="white_container">
   <h1>トレンド</h1>
   <%= link_to "人気記事", root_path %>
   <%= link_to "人気Tips", pages_timeline_path %>
-  <%= render 'artimeline' %>
+
+<div class="tip_timeline_container">
+  <% @tips_default.each do |tip| %>
+    <div class="tip_timeline_content">
+      <div class="tip_image">
+      <% if tip.images.attached? %>
+        <% tip.images.each do |image| %>
+          <%= link_to tip_path(tip) do %>
+            <%= image_tag image.variant(gravity: :center, resize:"360x360^", crop:"360x360+0+0").processed %>
+          <% end %>
+        <% end %>
+      <% end %>
+      </div>
+
+      <% if current_user.liketipd_by?(tip.id) %>
+        <div id="tip_<%= tip.id %>">
+          <%= link_to destroy_liketip_path(tip), method: :DELETE, remote: true do %>
+            <i class="fa fa-heart" style="color: red;"></i>
+          <% end %>
+          <%= tip.liketips.count %>
+        </div>
+      <% else %>
+        <div id="tip_<%= tip.id %>">
+          <%= link_to create_liketip_path(tip), method: :POST, remote: true do %>
+            <i class="fa fa-heart" style="color: #ddd;"></i>
+          <% end %>
+          <%= tip.liketips.count %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
-<% else %>
-  <%= render 'welcome' %>
-<% end %>
+  <%= paginate @tips_default %>
+</div>
+</div>
 <div class="pages_roadmap">
   <div class="pages_roadmap_desctibe">
     <h1 class="pages_roadmap_title">RoadMap</h1>
@@ -70,5 +100,4 @@
         </div>
       <% end %>
     </div>
-
-  </div>
+</div>

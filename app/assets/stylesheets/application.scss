@@ -17,6 +17,9 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "slick-theme";
+@import "slick";
+
 :root {
   --orange: #FF971D;
   --light-orange: #ffe8d6;
@@ -61,7 +64,6 @@ body {
 .top_header_container {
   float: right;
   display: flex;
-  align-items: center;
   height: 50px;
 }
 
@@ -89,6 +91,7 @@ body {
   border-radius: 3px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   transition: 0.25s;
+  margin-top: 6px;
 }
 
 .top_header_post:hover {
@@ -162,4 +165,19 @@ details[open] .details_content {
 .bootstrap {
   @import "bootstrap-sprockets";
   @import "bootstrap";
+}
+
+#header_post_menu {
+  text-align: center;
+  cursor: pointer;
+}
+
+li {
+  border: 1px solid navy;
+  margin-left: 16px;
+  height: 50px;
+}
+
+#header_post_sub {
+  display: none;
 }

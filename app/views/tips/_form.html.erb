@@ -10,22 +10,23 @@
       </ul>
     </div>
   <% end %>
+<div class="tip_container">
+  <div class="tip_image_container">
+  <div id="add_button" class="material_button count_button">+ 追加</div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+  <div id="boxes">
+    <%= form.file_field :images, multiple: true, class: "box" %>
+    <%= form.file_field :images, multiple: true, class: "box" %>
   </div>
 
-<div id="addbutton">add box</div>
+  <div id="delete_button" class="material_button count_button">- 削除</div>
+  </div>
 
-<div id="boxes">
-  <%= form.file_field :images, multiple: true, class: "box" %>
+  <%= form.text_area :content, placeholder: "キャプションを追加", class: "tip_form_content" %>
+
+
+  <div class="submit_form">
+    <%= form.submit class: "submit_button" %>
+  </div>
 </div>
-
-<div id="delete">delete</div>
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

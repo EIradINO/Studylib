@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'pages/tiplikes'
   get 'pages/liketips'
   get 'pages/artimeline'
+  get 'pages/timeline'
   resources :rooms
   post 'arlike/:id' => 'arlikes#create', as: 'create_arlike'
   delete 'arlike/:id' => 'arlikes#destroy', as: 'destroy_arlike'

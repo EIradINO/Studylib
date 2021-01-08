@@ -1,9 +1,5 @@
 class PagesController < ApplicationController
   def index
-    tips_default = Tip.order(id: "DESC").includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
-    @tips_default = Kaminari.paginate_array(tips_default).page(params[:page]).per(5)
-    @tips_time = Tip.order(id: "DESC")
-
     articles_default = Article.order(id: "DESC").includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
     @articles_default = Kaminari.paginate_array(articles_default).page(params[:page]).per(5)
     @articles_time = Article.order(id: "DESC")
@@ -30,5 +26,11 @@ class PagesController < ApplicationController
 
   def artimeline
 
+  end
+
+  def timeline
+    tips_default = Tip.order(id: "DESC").includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
+    @tips_default = Kaminari.paginate_array(tips_default).page(params[:page]).per(5)
+    @tips_time = Tip.order(id: "DESC")
   end
 end
