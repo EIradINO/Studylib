@@ -1,6 +1,12 @@
 <div class="white_container">
   <h1>いいねしたTips</h1>
     <% @liketips.each do |liketip| %>
-      <p><%= Tip.find_by(id: liketip.tip_id).content %></p>
+      <div class="tip_image">
+        <% Tip.find_by(id: liketip.tip_id).images.each do |image| %>
+          <%= link_to tip_path(Tip.find_by(id: liketip.tip_id)) do %>
+            <%= image_tag image.variant(gravity: :center, resize:"360x360^", crop:"360x360+0+0").processed %>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
 </div>

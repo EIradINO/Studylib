@@ -9,27 +9,18 @@
 
       <%= link_to article.title, article_path(article), class: "pages_article_title" %>
 
-      <p>タグ: <%= article.subject %></p>
+      <p><i class="fas fa-tag"></i> <%= article.subject %></p>
+      <p><i class="fas fa-check"></i> <%= article.field %></p>
 
-      <div class="pages_article_content"><%= article.content %></div>
+      <div class="pages_article_content">
+        <% article.containers.each do |container| %>
+          <%= container.content %>
+        <% end %>
+      </div>
 
       <%= link_to '続きを読む', article_path(article), class: "pages_article_readmore" %>
 
-      <% if current_user.arliked_by?(article.id) %>
-        <div id="article_<%= article.id %>" class="pages_article_like">
-          <%= link_to destroy_arlike_path(article), class: "like-link", method: :DELETE, remote: true do %>
-            <i class="fa fa-heart unlike-btn"></i>
-          <% end %>
-          <%= article.arlikes.count %>
-        </div>
-      <% else %>
-        <div id="article_<%= article.id %>" class="pages_article_like">
-          <%= link_to create_arlike_path(article), class: "like-link", method: :POST, remote: true do %>
-            <i class="fa fa-heart like-btn"></i>
-          <% end %>
-          <%= article.arlikes.count %>
-        </div>
-      <% end %>
+      <p style="color: var(--orange)"><i class="fas fa-bookmark"></i> <%= article.arlikes.count %></p>
 
     </div>
     <hr>
@@ -39,12 +30,21 @@
   </div>
 
 <h2>投稿Tips</h2>
-<ul class="users">
+<div class="tip_timeline_container">
   <% @user.tips.each do |tip| %>
-    <li>
-      <%= link_to tip.content, tip_path %>
-    </li>
+    <div class="tip_timeline_content">
+    <div class="tip_image">
+      <% if tip.images.attached? %>
+        <% tip.images.each do |image| %>
+          <%= link_to tip_path(tip) do %>
+            <%= image_tag image.variant(gravity: :center, resize:"360x360^", crop:"360x360+0+0").processed %>
+          <% end %>
+          <p><i style="color: red;" class="fas fa-heart"></i> <%= tip.liketips.count %></p>
+        <% end %>
+      <% end %>
+    </div>
+    </div>
   <% end %>
-</ul>
+</div>
 
 </div>

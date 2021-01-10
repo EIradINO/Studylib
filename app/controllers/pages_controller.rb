@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   end
 
   def arlikes
-    @arlikes = Arlike.where(user_id: current_user.id)
+    @arlikes = Arlike.where(user_id: current_user.id).page(params[:page]).per(5)
   end
 
   def tiplikes

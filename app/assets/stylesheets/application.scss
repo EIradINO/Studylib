@@ -181,3 +181,21 @@ details[open] .details_content {
 #header_post_sub {
   display: none;
 }
+
+.header_post_content {
+  width: 100%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  background: var(--light-orange);
+  margin-bottom: 5px;
+  border-radius: 2px;
+}
+
+.header_post_link {
+  height: 60px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

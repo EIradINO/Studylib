@@ -1,12 +1,16 @@
 <div class="white_container">
 <h1>いいねした投稿</h1>
-<%= link_to 'いいねしたTips', pages_liketips_path %>
+<%#= link_to 'いいねしたTips', pages_liketips_path %>
     <% @arlikes.each do |arlike| %>
+
     <div class="pages_article">
       <%= link_to Article.find_by(id: arlike.article_id).title, article_path(Article.find_by(id: arlike.article_id)), class: "pages_article_title" %>
-      <p>タグ: <%= Article.find_by(id: arlike.article_id).subject %></p>
-      <i class="fa fa-heart unlike-btn"><%= Article.find_by(id: arlike.article_id).arlikes.count %></i>
+      <p><i class="fas fa-tag"></i> <%= Article.find_by(id: arlike.article_id).subject %></p>
+      <p><i class="fas fa-check"></i> <%= Article.find_by(id: arlike.article_id).field %></p>
     </div>
     <hr>
-    <% end %>
+  <% end %>
+  <div class="pages_article_paginate">
+    <%= paginate @arlikes %>
+  </div>
 </div>

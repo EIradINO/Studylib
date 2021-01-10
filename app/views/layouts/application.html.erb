@@ -25,15 +25,14 @@
               <% end %>
             <div class="top_header_button"><%= link_to 'プロフィール変更', edit_user_registration_path, class: "top_header_link" %></div>
             <div class="top_header_button"><%= link_to 'いいねした投稿', pages_arlikes_path, class: "top_header_link" %></div>
-            <div class="top_header_button"><%= link_to 'ユーザー一覧', users_path, class: "top_header_link" %></div>
             <div class="top_header_button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "top_header_link" %></div>
 
             <div id="header_post_menu">
               <div class="top_header_button"><div class="top_header_link top_header_post">新規投稿</div></div>
               <div id="header_post_sub">
                 <ul>
-                  <li><%= link_to "記事作成", new_article_path %></li>
-                  <li><%= link_to "Tip投稿", new_tip_path %></li>
+                  <li class="header_post_content"><%= link_to "記事作成", new_article_path, class: "header_post_link" %></li>
+                  <li class="header_post_content"><%= link_to "Tip投稿", new_tip_path, class: "header_post_link" %></li>
                 </ul>
               </div>
             </div>
