@@ -1,7 +1,7 @@
 <%= form_with(model: article, class: "article_form", local: true) do |form| %>
   <% if article.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <h2><%= article.errors.count %>件のエラーがあります</h2>
       <ul>
         <% article.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -14,46 +14,18 @@
     <%= form.text_field :title, placeholder: "タイトル" %>
   </div>
 
-  <%= form.select :subject, ['勉強法', '英語', '世界史', '化学', '数学Ⅰ+A', '数学Ⅱ+B', '物理'], {include_blank: '教科を選択'}, {class: 'parent'} %>
+  <%= form.select :subject, ['勉強法', '英語', '数学Ⅰ+A', '数学Ⅱ+B', '物理', '化学', '世界史'], {include_blank: '教科を選択'}, {class: 'first_select'} %>
 
-  <select name="article[field]" id="article_field" class="children" disabled>
-  <option value="">教科を選択</option>
-  <option value="学習のヒント" data-val="勉強法">学習のヒント</option>
-  <option value="テスト対策" data-val="勉強法">テスト対策</option>
-  <option value="数と式" data-val="数学Ⅰ+A">数と式</option>
-  <option value="二次関数" data-val="数学Ⅰ+A">二次関数</option>
-  <option value="図形と計量" data-val="数学Ⅰ+A">図形と計量</option>
-  <option value="集合と命題" data-val="数学Ⅰ+A">集合と命題</option>
-  <option value="データの分析" data-val="数学Ⅰ+A">データの分析</option>
-  <option value="場合の数" data-val="数学Ⅰ+A">場合の数</option>
-  <option value="確率" data-val="数学Ⅰ+A">確率</option>
-  <option value="整数の性質" data-val="数学Ⅰ+A">整数の性質</option>
-  <option value="図形の性質" data-val="数学Ⅰ+A">図形の性質</option>
-  <option value="式と計算" data-val="数学Ⅱ+B">式と計算</option>
-  <option value="高次方程式" data-val="数学Ⅱ+B">高次方程式</option>
-  <option value="図形と方程式" data-val="数学Ⅱ+B">図形と方程式</option>
-  <option value="三角関数" data-val="数学Ⅱ+B">三角関数</option>
-  <option value="指数関数と対数関数" data-val="数学Ⅱ+B">指数関数と対数関数</option>
-  <option value="微分法" data-val="数学Ⅱ+B">微分法</option>
-  <option value="積分法" data-val="数学Ⅱ+B">積分法</option>
-  <option value="数列" data-val="数学Ⅱ+B">数列</option>
-  <option value="平面上のベクトル" data-val="数学Ⅱ+B">平面上のベクトル</option>
-  <option value="空間のベクトル" data-val="数学Ⅱ+B">空間のベクトル</option>
-  <option value="確率分布と統計的な推測" data-val="数学Ⅱ+B">確率分布と統計的な推測</option>
-  </select>
-
-    <%= form.fields_for :artips do |artip| %>
-      <%= artip.text_field :content %>
-    <% end %>
+  <%= render "field" %>
 
     <%= form.fields_for :containers do |container| %>
-      <div id="article_container0">
-        <%= container.rich_text_area :content %>
+      <div id="article_containers">
       </div>
     <% end %>
 
-    <div id="text"></div>
-    <p id="container">追加</p>
+    <div id="add_content" class="material_button count_button">+ 文章を追加</div>
+    <div id="add_artip" class="material_button count_button">+ Tipを追加</div>
+    <div id="delete_button" class="material_button count_button">- 削除</div>
 
     <div class="submit_form">
       <%= form.submit "投稿", class: "submit_button" %>

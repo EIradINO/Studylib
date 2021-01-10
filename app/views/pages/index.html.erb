@@ -1,74 +1,13 @@
 <% if user_signed_in? %>
 <div class="white_container">
   <h1>トレンド</h1>
-  <%= link_to "人気記事", root_path %>
-  <%= link_to "人気Tips", pages_timeline_path %>
+  <nav>
+  <li class="current timeline_select_list"><%= link_to "人気記事", root_path, class: "timeline_select_link" %></li>
+  <li class="timeline_select_list"><%= link_to "人気Tips", pages_timeline_path, class: "timeline_select_link" %></li>
+  </nav>
   <%= render 'artimeline' %>
 </div>
 <% else %>
   <%= render 'welcome' %>
 <% end %>
-<div class="pages_roadmap">
-  <div class="pages_roadmap_desctibe">
-    <h1 class="pages_roadmap_title">RoadMap</h1>
-    <p>describedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribedescribe</p>
-  </div>
-
-  <div class="pages_roadmap_container">
-
-    <div class="pages_roadmap_subject" id="pages_roadmap_test">
-      <%= link_to articles_path, class: "pages_roadmap_link" do %>
-        <div class="pages_roadmap_inner">
-          <p class="pages_roadmap_subject_title">Test</p>
-          <%= embedded_svg("test.svg", class: "pages_roadmap_picture") %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="pages_roadmap_subject" id="pages_roadmap_english">
-      <%= link_to artips_path, class: "pages_roadmap_link" do %>
-        <div class="pages_roadmap_inner">
-          <p class="pages_roadmap_subject_title">English</p>
-          <%= embedded_svg("language.svg", class: "pages_roadmap_picture") %>
-        </div>
-      <% end %>
-    </div>
-
-
-    <div class="pages_roadmap_subject" id="pages_roadmap_worldhistory">
-      <%= link_to tips_path, class: "pages_roadmap_link" do %>
-        <div class="pages_roadmap_inner">
-          <p class="pages_roadmap_subject_title">World History</p>
-          <%= embedded_svg("geology.svg", class: "pages_roadmap_picture") %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="pages_roadmap_subject" id="pages_roadmap_chemistry">
-      <%= link_to containers_path, class: "pages_roadmap_link" do %>
-        <div class="pages_roadmap_inner">
-          <p class="pages_roadmap_subject_title">Chemistry</p>
-          <%= embedded_svg("chemistry.svg", class: "pages_roadmap_picture") %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="pages_roadmap_subject" id="pages_roadmap_math">
-      <%= link_to subjects_math1_path, class: "pages_roadmap_link" do %>
-        <div class="pages_roadmap_inner">
-          <p class="pages_roadmap_subject_title">Math</p>
-          <%= embedded_svg("math.svg", class: "pages_roadmap_picture") %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="pages_roadmap_subject" id="pages_roadmap_physics">
-      <%= link_to articles_path, class: "pages_roadmap_link" do %>
-        <div class="pages_roadmap_inner">
-          <p class="pages_roadmap_subject_title">Physics</p>
-          <%= embedded_svg("momentum.svg", class: "pages_roadmap_picture") %>
-        </div>
-      <% end %>
-    </div>
-
-  </div>
+<%= render "roadmap" %>

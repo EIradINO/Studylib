@@ -9,7 +9,7 @@
     <% else %>
     <div class="like-link off">
       <%= link_to create_arlike_path(@article), method: :POST, remote: true do %>
-        <i class="fas fa-bookmark unlike" title="ブックマークする"></i>
+        <i class="fas fa-bookmark unlike" title="ブックマークする" style="color: #ddd"></i>
       <% end %>
       <p class="unlike_count"><%= @article.arlikes.count %></p>
     </div>

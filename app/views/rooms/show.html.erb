@@ -3,5 +3,5 @@
 <div id='messages' data-room_id="<%= @room.id %>" class="room_container">
   <%= render @messages %>
 </div>
-<%= rich_text_area_tag :content, nil, data: { behavior: 'room_speaker' }, class: "message_field", placeholder: "メッセージを入力..." %>
+<%= text_field_tag :content, nil, data: { behavior: 'room_speaker' }, class: "message_field", placeholder: "メッセージを入力..." %>
 </div>

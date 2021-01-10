@@ -8,7 +8,11 @@
       <p><i class="fas fa-tag"></i> <%= article.subject %></p>
       <p><i class="fas fa-check"></i> <%= article.field %></p>
 
-      <div class="pages_article_content"><%= article.content %></div>
+      <div class="pages_article_content">
+      <% article.containers.each do |container| %>
+        <%= container.content %>
+      <% end %>
+      </div>
 
       <%= link_to '続きを読む', article_path(article), class: "pages_article_readmore" %>
       <p style="color: red;"><i class="fas fa-bookmark"></i> <%= article.arlikes.count %></p>

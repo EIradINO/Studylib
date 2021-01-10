@@ -1,24 +1,103 @@
-<div class="white_container">
-  <h1>数学Ⅰ+A</h1>
-  <ul>
-    <% @articles.each do |article| %>
-      <li><%= link_to article.title, article_path(article) %></li>
-    <% end %>
-  </ul>
+<body style="background: #ccccff;">
+  <div class="white_container">
+    <h1 class="subject_title">MathI+A</h1>
+      <details>
+        <summary class="article_question math_container">数と式</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "数と式").each do |article| %>
+                <li class="details_room math_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
 
-  <h2>数と式</h2>
-  <ul>
-    <% @articles.where(field: "数と式").each do |article| %>
-      <li><%= link_to article.title, article_path(article) %></li>
-    <% end %>
-  </ul>
+      <details>
+      <summary class="article_question math_container">二次関数</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "二次関数").each do |article| %>
+                <li class="details_room math_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
 
-  <h2>二次関数</h2>
-  <ul>
-    <% @articles.where(field: "二次関数").each do |article| %>
-      <li><%= link_to article.title, article_path(article) %></li>
-    <% end %>
-  </ul>
+      <details>
+      <summary class="article_question math_container">図形と計量</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "図形と計量").each do |article| %>
+                <li class="details_room math_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
 
+      <details>
+      <summary class="article_question math_container">集合と命題</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "集合と命題").each do |article| %>
+                <li class="details_room math_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
 
-</div>
+      <details>
+      <summary class="article_question math_container">データの分析</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "データの分析").each do |article| %>
+                <li class="details_room math_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+      <summary class="article_question math_container">場合の数</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "場合の数").each do |article| %>
+                <li class="details_room math_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+      <summary class="article_question math_container">確率</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "確率").each do |article| %>
+                <li class="details_room math_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+      <summary class="article_question math_container">整数の性質</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "整数の性質").each do |article| %>
+                <li class="details_room math_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+      <summary class="article_question math_container">図形の性質</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "図形の性質").each do |article| %>
+                <li class="details_room math_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+  </div>
+</body>

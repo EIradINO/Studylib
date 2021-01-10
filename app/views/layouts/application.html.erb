@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -21,7 +21,7 @@
               <% if current_user.username.nil? || (current_user.username == "") %>
                 <div class="top_header_button"><%= link_to "ユーザー名を設定してください", edit_user_registration_path, class: "top_header_link" %></div>
               <% else %>
-                <div class="top_header_button"><%= link_to current_user.username, pages_show_path, class: "top_header_link" %></div>
+                <div class="top_header_button"><%= link_to current_user.username, user_path(current_user), class: "top_header_link" %></div>
               <% end %>
             <div class="top_header_button"><%= link_to 'プロフィール変更', edit_user_registration_path, class: "top_header_link" %></div>
             <div class="top_header_button"><%= link_to 'いいねした投稿', pages_arlikes_path, class: "top_header_link" %></div>

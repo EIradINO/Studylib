@@ -1,8 +1,0 @@
-<div class="white_container">
-  <%= @container.content %>
-  <% if @container.image.attached? %>
-    <%= image_tag @container.image %>
-  <% end %>
-  <%= link_to 'Edit', edit_container_path(@container) %> |
-  <%= link_to 'Back', containers_path %>
-</div>

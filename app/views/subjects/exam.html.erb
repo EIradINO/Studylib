@@ -1,2 +1,26 @@
-<h1>Subjects#exam</h1>
-<p>Find me in app/views/subjects/exam.html.erb</p>
+<body style="background: #ffcccc;">
+  <div class="white_container">
+    <h1 class="subject_title">How To Study?</h1>
+      <details>
+        <summary class="article_question exam_container">学習のヒント</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "学習のヒント").each do |article| %>
+                <li class="details_room exam_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+      <summary class="article_question exam_container">テスト対策</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "テスト対策").each do |article| %>
+                <li class="details_room exam_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+  </div>
+</body>

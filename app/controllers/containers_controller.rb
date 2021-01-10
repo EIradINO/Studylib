@@ -69,6 +69,6 @@ class ContainersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def container_params
-      params.require(:container).permit(:content).merge(article_id: 1)
+      params.require(:container).permit(:content).merge(container_id: 1)
     end
 end

@@ -5,9 +5,6 @@ class PagesController < ApplicationController
     @articles_time = Article.order(id: "DESC")
   end
 
-  def show
-  end
-
   def about
 
   end

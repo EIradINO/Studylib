@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get 'subjects/physics'
   resources :containers
   resources :tips
-  resources :artips
   get 'rooms/show'
   resources :articles
   devise_for :users, controllers: {
@@ -20,7 +19,6 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'rooms/index'
   get 'rooms/new'
-  get 'pages/show'
   get 'pages/about'
   get 'pages/arlikes'
   get 'pages/tiplikes'

@@ -2,13 +2,11 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "sign-up-form" }) do |f| %>
     <h2>ログイン</h2>
     <div class="field">
-      <%= f.email_field :email, autocomplete: "email" %>
-      <span data-placeholder="メールアドレス"></span>
+      <%= f.email_field :email, autocomplete: "email" , class: "edit_field", placeholder: "メールアドレス"%>
     </div>
 
     <div class="field">
-      <%= f.password_field :password, autocomplete: "current-password" %>
-      <span data-placeholder="パスワード"></span>
+      <%= f.password_field :password, autocomplete: "current-password", class: "edit_field", placeholder: "パスワード" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
@@ -19,7 +17,7 @@
     <% end %>
 
     <div class="actions">
-      <%= f.submit "ログイン", class: "logbtn" %>
+      <%= f.submit "ログイン", class: "logbtn", class: "material_button user_update_button" %>
     </div>
 
     <%= render "devise/shared/links" %>

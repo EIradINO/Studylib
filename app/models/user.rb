@@ -13,10 +13,6 @@ class User < ApplicationRecord
     arlikes.where(article_id: article_id).exists?
   end
 
-  def tipliked_by?(artip_id)
-    tiplikes.where(artip_id: artip_id).exists?
-  end
-
   def liketipd_by?(tip_id)
     liketips.where(tip_id: tip_id).exists?
   end

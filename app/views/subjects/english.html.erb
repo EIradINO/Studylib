@@ -1,0 +1,81 @@
+<body style="background: #ffffcc;">
+  <div class="white_container">
+    <h1 class="subject_title">English</h1>
+      <details>
+        <summary class="article_question english_container">単語</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "単語").each do |article| %>
+                <li class="details_room english_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+      <summary class="article_question english_container">英文法</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "英文法").each do |article| %>
+                <li class="details_room english_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+      <summary class="article_question english_container">長文読解</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "長文読解").each do |article| %>
+                <li class="details_room english_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+      <summary class="article_question english_container">リーディング</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "リーディング").each do |article| %>
+                <li class="details_room english_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+      <summary class="article_question english_container">リスニング</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "リスニング").each do |article| %>
+                <li class="details_room english_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+      <summary class="article_question english_container">ライティング</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "ライティング").each do |article| %>
+                <li class="details_room english_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+
+      <details>
+      <summary class="article_question english_container">スピーキング</summary>
+          <div class="details_content">
+            <ul>
+              <% @articles.where(field: "スピーキング").each do |article| %>
+                <li class="details_room english_content"><%= link_to article.title, article_path(article), class: "details_room_link" %></li>
+              <% end %>
+            </ul>
+          </div>
+      </details>
+  </div>
+</body>

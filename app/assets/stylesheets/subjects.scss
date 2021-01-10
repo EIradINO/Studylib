@@ -1,3 +1,31 @@
 // Place all the styles related to the subjects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.english_container {
+  background: #ffcc00;
+}
+
+.english_content {
+  background: #ffffcc;
+}
+
+.subject_title {
+  font-family: 'Damion', cursive;
+}
+
+.exam_container {
+  background: #ff0033;
+}
+
+.exam_content {
+  background: #ffcccc;
+}
+
+.math_container {
+  background: #0033ff;
+}
+
+.math_content {
+  background: #ccccff;
+}

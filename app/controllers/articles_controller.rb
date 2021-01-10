@@ -1,18 +1,11 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  # GET /articles
-  # GET /articles.json
-  def index
-    @articles = Article.all
-  end
-
   # GET /articles/1
   # GET /articles/1.json
   def show
     @user = User.find(@article.user_id)
     @rooms = Article.find(params[:id]).rooms
-    @artips = Article.find(params[:id]).artips
     @containers = Article.find(params[:id]).containers
     @room = Room.new
     @article = Article.find(params[:id])
@@ -22,12 +15,12 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-    @article.artips.build
     @article.containers.build
   end
 
   # GET /articles/1/edit
   def edit
+    @article = Article.find(params[:id])
     unless current_user.id == @article.user_id
       redirect_to root_path
       flash[:notice] = "アクセスできません"
@@ -53,7 +46,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1.json
   def update
     respond_to do |format|
-      if @article.update(article_params)
+      if @article.update(update_article_params)
         format.html { redirect_to @article, notice: '記事を更新しました' }
         format.json { render :show, status: :ok, location: @article }
       else
@@ -68,7 +61,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: '記事を削除しました' }
+      format.html { redirect_to root_path, notice: '記事を削除しました' }
       format.json { head :no_content }
     end
   end
@@ -81,7 +74,11 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :subject, :field, artips_attributes: [:content], containers_attributes: [:content]).merge(user_id: current_user.id)
+      params.require(:article).permit(:title, :subject, :field, containers_attributes: [:content, :artip]).merge(user_id: current_user.id)
+    end
+
+    def update_article_params
+      params.require(:article).permit(:title, :subject, :field, containers_attributes: [:content, :artip, :_destroy, :id]).merge(user_id: current_user.id)
     end
 
     def redirect_root
